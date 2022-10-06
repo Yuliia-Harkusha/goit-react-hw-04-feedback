@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const FeedbackBlock = styled.div`
+export const FeedbackBlock = styled.ul`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -8,7 +8,7 @@ export const FeedbackBlock = styled.div`
   padding: 20px auto;
 `;
 
-export const FeedbsckItem = styled.div`
+export const FeedbackItem = styled.li`
   display: flex;
   flex-direction: column;
   align-items: center;

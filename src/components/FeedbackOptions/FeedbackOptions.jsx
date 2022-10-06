@@ -3,21 +3,25 @@ import PropTypes from 'prop-types';
 import { GiCoffeeCup } from 'react-icons/gi';
 import {
   FeedbackBlock,
-  FeedbsckItem,
+  FeedbackItem,
   OptionBtn,
 } from './FeedbackOptions.styled';
 
 export const FeedbackOptions = ({ options, onLeaveFeedback }) => {
   return (
     <FeedbackBlock>
-      {options.map(option => {
+      {Object.keys(options).map(option => {
         return (
-          <FeedbsckItem key={option}>
+          <FeedbackItem key={option}>
             <GiCoffeeCup />
-            <OptionBtn onClick={() => onLeaveFeedback(option)} name={option}>
+            <OptionBtn
+              onClick={() => onLeaveFeedback(option)}
+              name={option}
+              type="button"
+            >
               {option}
             </OptionBtn>
-          </FeedbsckItem>
+          </FeedbackItem>
         );
       })}
     </FeedbackBlock>
@@ -26,4 +30,5 @@ export const FeedbackOptions = ({ options, onLeaveFeedback }) => {
 
 FeedbackOptions.propTypes = {
   onLeaveFeedback: PropTypes.func.isRequired,
+  options: PropTypes.object,
 };
