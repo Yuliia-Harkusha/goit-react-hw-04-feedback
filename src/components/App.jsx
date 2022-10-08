@@ -38,12 +38,14 @@ export const App = () => {
 
   const total = countTotalFeedback();
   const positivePercentage = countPositiveFeedbackPercentage();
-  const options = { good, neutral, bad };
 
   return (
     <>
       <Section title="Please leave feedback">
-        <FeedbackOptions options={options} onLeaveFeedback={onLeaveFeedback} />
+        <FeedbackOptions
+          options={['good', 'neutral', 'bad']}
+          onLeaveFeedback={onLeaveFeedback}
+        />
       </Section>
       <Section title="Statistics">
         {!total ? (

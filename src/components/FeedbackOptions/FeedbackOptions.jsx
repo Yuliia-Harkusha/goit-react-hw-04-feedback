@@ -10,7 +10,7 @@ import {
 export const FeedbackOptions = ({ options, onLeaveFeedback }) => {
   return (
     <FeedbackBlock>
-      {Object.keys(options).map(option => {
+      {options.map(option => {
         return (
           <FeedbackItem key={option}>
             <GiCoffeeCup />
@@ -30,5 +30,5 @@ export const FeedbackOptions = ({ options, onLeaveFeedback }) => {
 
 FeedbackOptions.propTypes = {
   onLeaveFeedback: PropTypes.func.isRequired,
-  options: PropTypes.object,
+  options: PropTypes.array,
 };
